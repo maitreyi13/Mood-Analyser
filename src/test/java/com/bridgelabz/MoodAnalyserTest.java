@@ -11,13 +11,13 @@ public class MoodAnalyserTest {
             System.out.println(result);
             Assertions.assertEquals("Sad" , result);
     }
-//    @Test
-//    void messageNull_returnHappy() {
-//        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
-//        String result = moodAnalyser.analyseMood();
-//        System.out.println(result);
-//        Assertions.assertEquals("Happy" , result);
-//    }
+    @Test
+    void messageNull_returnHappy() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
+        String result = moodAnalyser.analyseMood();
+        System.out.println(result);
+        Assertions.assertEquals("Happy" , result);
+    }
 
     @Test
     void messageHappy_returnHappy() {
@@ -27,11 +27,11 @@ public class MoodAnalyserTest {
         Assertions.assertEquals("Happy" , result);
     }
 
-    @Test
-    void messageNull_returnInvalid() {
-        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
-        String result = moodAnalyser.analyseMood();
-        System.out.println(result);
-        Assertions.assertEquals("" , result);
-    }
+//    @Test
+//    void messageNull_returnInvalid() {
+//        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
+//        String result = moodAnalyser.analyseMood();
+//        System.out.println(result);
+//        Assertions.assertEquals("" , result);
+//    }
 }
