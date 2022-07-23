@@ -6,15 +6,23 @@ import org.junit.jupiter.api.Test;
 public class MoodAnalyserTest {
     @Test
     void messageSad_returnSad() {
-        //  TC1.1 Given “I am in Sad Mood” message should return SAD
-        String result = MoodAnalyser.analyseMood("I am in Sad Mood.");
+        MoodAnalyser moodAnalyser = new MoodAnalyser("I Am In Sad mood.");
+        String result = moodAnalyser.analyseMood();
             System.out.println(result);
             Assertions.assertEquals("Sad" , result);
     }
+//    @Test
+//    void messageNull_returnHappy() {
+//        MoodAnalyser moodAnalyser = new MoodAnalyser("I Am In Any mood.");
+//        String result = moodAnalyser.analyseMood();
+//        System.out.println(result);
+//        Assertions.assertEquals("Happy" , result);
+//    }
+
     @Test
-    void messageNull_returnHappy() {
-        //  TC1.2 Given “I am in Any Mood” message should return HAPPY
-        String result = MoodAnalyser.analyseMood("I am in Any Mood");
+    void messageHappy_returnHappy() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser("I Am In Happy mood.");
+        String result = moodAnalyser.analyseMood();
         System.out.println(result);
         Assertions.assertEquals("Happy" , result);
     }
