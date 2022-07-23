@@ -19,11 +19,11 @@ public class MoodAnalyserTest {
 //        Assertions.assertEquals("Happy" , result);
 //    }
 
-    @Test
-    void messageHappy_returnHappy() {
-        MoodAnalyser moodAnalyser = new MoodAnalyser("I Am In Happy mood.");
-        String result = moodAnalyser.analyseMood();
-        System.out.println(result);
-        Assertions.assertEquals("Happy" , result);
-    }
+//    @Test
+//    void messageHappy_returnHappy() {
+//        MoodAnalyser moodAnalyser = new MoodAnalyser("I Am In Happy mood.");
+//        String result = moodAnalyser.analyseMood();
+//        System.out.println(result);
+//        Assertions.assertEquals("Happy" , result);
+//    }
 }
