@@ -5,33 +5,34 @@ import org.junit.jupiter.api.Test;
 
 public class MoodAnalyserTest {
     @Test
-    void messageSad_returnSad() {
-        MoodAnalyser moodAnalyser = new MoodAnalyser("I Am In Sad mood.");
-        String result = moodAnalyser.analyseMood();
-            System.out.println(result);
-            Assertions.assertEquals("Sad" , result);
+    void givenMood_IsSad_ShouldReturn_Sad() throws MoodAnalysisException {
+        MoodAnalyser moodAnalyser = new MoodAnalyser("I am in Sad Mood");
+        Assertions.assertEquals("Sad", moodAnalyser.analyseMood());
     }
+
     @Test
-    void messageNull_returnHappy() {
+    void givenMood_IsHappy_ShouldReturn_Happy() throws MoodAnalysisException {
+        MoodAnalyser moodAnalyser = new MoodAnalyser("I am in Happy Mood");
+        Assertions.assertEquals("Happy", moodAnalyser.analyseMood());
+    }
+
+    @Test
+    public void givenMood_NUll_ShouldThrow_MoodAnalysisNullException(){
         MoodAnalyser moodAnalyser = new MoodAnalyser(null);
-        String result = moodAnalyser.analyseMood();
-        System.out.println(result);
-        Assertions.assertEquals("Happy" , result);
+        try {
+            moodAnalyser.analyseMood();
+        } catch (MoodAnalysisException e) {
+            Assertions.assertEquals(MoodAnalysisException.ExceptionType.Entered_Null, e.Type);
+        }
     }
 
     @Test
-    void messageHappy_returnHappy() {
-        MoodAnalyser moodAnalyser = new MoodAnalyser("I Am In Happy mood.");
-        String result = moodAnalyser.analyseMood();
-        System.out.println(result);
-        Assertions.assertEquals("Happy" , result);
+    void givenMood_Empty_ShouldThrow_MoodAnalysisEmptyException() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser("");
+        try {
+            moodAnalyser.analyseMood();
+        } catch (MoodAnalysisException e) {
+            Assertions.assertEquals(MoodAnalysisException.ExceptionType.Entered_Empty, e.Type);
+        }
     }
-
-//    @Test
-//    void messageNull_returnInvalid() {
-//        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
-//        String result = moodAnalyser.analyseMood();
-//        System.out.println(result);
-//        Assertions.assertEquals("" , result);
-//    }
 }
